@@ -66,11 +66,7 @@ img {
     height: auto;
 }
 
-/* Imagens de conteúdo ganham borda dourada */
-p img[width] {
-    border: 2px solid #ffd700;
-    border-radius: 8px;
-}
+
 
 /* Vídeo */
 iframe {

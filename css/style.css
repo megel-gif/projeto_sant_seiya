@@ -1,44 +1,56 @@
-/* ===== Os Cavaleiros do Zodíaco - CSS simples ===== */
+/* Fonte dos títulos */
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&display=swap");
 
-/* Corpo da página */
+/* ---------- Corpo da página ---------- */
 body {
     background-color: #0a0e1a;
-    color: #ffffff;
+    /* brilho dourado suave no topo */
+    background-image: radial-gradient(ellipse at top, rgba(255, 215, 0, 0.12), transparent 60%);
+    background-repeat: no-repeat;
+    color: #e9ecf5;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 17px;
-    line-height: 1.6;
+    line-height: 1.7;
     max-width: 1000px;
     margin: 0 auto;
     padding: 20px;
 }
 
-/* Títulos */
+/* ---------- Títulos (todos centralizados) ---------- */
 h2, h3, h4 {
-    font-family: Georgia, "Times New Roman", serif;
+    font-family: "Cinzel", Georgia, serif;
     color: #ffd700;
+    text-align: center;
 }
 
 h2 {
-    font-size: 32px;
-    margin-top: 30px;
+    font-size: 34px;
+    letter-spacing: 2px;
+    margin-top: 35px;
+    text-shadow: 0 0 15px rgba(255, 215, 0, 0.45);
 }
 
 h3 {
     font-size: 24px;
-    margin-top: 25px;
+    margin-top: 30px;
 }
 
-h4 {
-    font-size: 16px;
+font {
+    color: inherit;
 }
 
-/* Textos */
+/* ---------- Textos ---------- */
 p {
+    text-align: center;
     max-width: 800px;
     margin: 0 auto 15px auto;
 }
 
-/* Links e menu */
+.justificado {
+    text-align: justify;
+}
+
+/* ---------- Links ---------- */
 a {
     color: #ffd700;
     text-decoration: none;
@@ -50,81 +62,237 @@ a:visited {
 
 a:hover {
     color: #ffffff;
-    text-decoration: underline;
+    text-shadow: 0 0 10px #ffd700;
 }
 
-/* Linhas divisórias */
+/* ---------- Menu ---------- */
+.menu {
+    color: #5a6485;             
+    font-size: 15px;
+    letter-spacing: 1px;
+    padding: 10px 0;
+}
+
+.menu a {
+    padding: 0 10px;
+}
+
+/* ---------- Linhas divisórias ---------- */
 hr {
     border: 0;
-    border-top: 2px solid #ffd700;
+    height: 1px;
+    background-color: #ffd700;
     margin: 20px 0;
 }
 
-/* Imagens */
+/* ---------- Imagens ---------- */
 img {
     max-width: 100%;
     height: auto;
 }
 
+/* imagens de conteúdo */
+p img[width] {
+    border: 2px solid #ffd700;
+    border-radius: 8px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+}
 
+/* logo e ícones de redes sociais não levam borda */
+a img[alt^="Logomarca"],
+p img[alt^="Logomarca"] {
+    border: 0;
+    box-shadow: none;
+    filter: drop-shadow(0 0 12px rgba(255, 215, 0, 0.4));
+}
 
-/* Vídeo */
+a img[alt="Facebook"],
+a img[alt="Instagram"],
+a img[alt="Youtube"],
+a img[alt="Spotify"] {
+    border: 0;
+    box-shadow: none;
+    opacity: 0.7;
+}
+
+a img[alt="Facebook"]:hover,
+a img[alt="Instagram"]:hover,
+a img[alt="Youtube"]:hover,
+a img[alt="Spotify"]:hover {
+    opacity: 1;
+}
+
+/* ---------- Vídeo ---------- */
 iframe {
     display: block;
     max-width: 100%;
     margin: 0 auto 20px auto;
     border: 2px solid #ffd700;
+    border-radius: 8px;
 }
 
-/* Tabelas */
+/* ---------- Tabelas  ---------- */
 table {
     border-collapse: collapse;
     margin: 20px auto;
     max-width: 100%;
     background-color: #161f36;
+    text-align: left;
 }
 
 th {
     background-color: #ffd700;
     color: #0a0e1a;
+    font-family: "Cinzel", Georgia, serif;
     padding: 10px;
 }
 
 td {
-    border: 1px solid #ffd700;
+    border: 1px solid rgba(255, 215, 0, 0.5);
     padding: 10px;
 }
 
-tr:hover td {
-    background-color: #1f2b4d;
+/* linhas alternadas e destaque ao passar o mouse */
+tr:nth-child(even) td {
+    background-color: #1a2442;
 }
 
-/* Formulário */
+tr:hover td {
+    background-color: #263561;
+}
+
+/* primeira coluna em destaque */
+td:first-child {
+    color: #ffd700;
+    font-weight: bold;
+}
+
+/* ---------- Formulário ---------- */
+form td:first-child {
+    text-align: right;           
+}
+
+td[colspan] {
+    text-align: center;          
+}
+
+form tr:hover td,
+form tr:nth-child(even) td {
+    background-color: #161f36;
+}
+
 input, select, textarea {
     background-color: #0a0e1a;
     color: #ffffff;
     border: 1px solid #ffd700;
     border-radius: 4px;
-    padding: 6px;
+    padding: 8px;
     font-size: 16px;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    box-shadow: 0 0 8px #ffd700;
+}
+
+input[type="submit"],
+input[type="reset"] {
+    padding: 10px 24px;
+    cursor: pointer;
 }
 
 input[type="submit"] {
     background-color: #ffd700;
     color: #0a0e1a;
     font-weight: bold;
-    cursor: pointer;
-}
-
-input[type="reset"] {
-    cursor: pointer;
 }
 
 input[type="submit"]:hover {
     background-color: #ffffff;
 }
 
-/* Rodapé */
+/* ---------- Rodapé ---------- */
 small {
     color: #9aa3bf;
+}
+
+/* ---------- Celular ---------- */
+@media (max-width: 700px) {
+    body {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    .menu a {
+        padding: 0 4px;
+    }
+
+    td, th {
+        padding: 6px;
+        font-size: 14px;
+    }
+}
+
+
+/* Imagem de fundo da página inteira  */
+body.inicio {
+    background-image:
+        linear-gradient(rgba(10, 14, 26, 0.85), rgba(10, 14, 26, 0.85)),
+        url("../img/sobre_cosmos.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    overflow-x: hidden;
+}
+
+/* Faixas com que ocupam a largura  da tela */
+.faixa {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 320px;
+    margin: 40px 0 40px calc(50% - 50vw);
+    width: 100vw;
+    border-top: 2px solid #ffd700;
+    border-bottom: 2px solid #ffd700;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;       
+}
+
+.faixa h2 {
+    margin: 0;
+    font-size: 40px;
+    text-shadow: 0 2px 10px #000, 0 0 25px rgba(255, 215, 0, 0.6);
+}
+
+/* Cada faixa usa uma imagem */
+.faixa-bronze {
+    background-image: linear-gradient(rgba(10, 14, 26, 0.35), rgba(10, 14, 26, 0.35)),
+        url("../img/bronze_knights.jpg");
+}
+
+.faixa-ouro {
+    background-image: linear-gradient(rgba(10, 14, 26, 0.35), rgba(10, 14, 26, 0.35)),
+        url("../img/gold_knights.webp");
+}
+
+.faixa-sagas {
+    background-image: linear-gradient(rgba(10, 14, 26, 0.35), rgba(10, 14, 26, 0.35)),
+        url("../img/sagas_classicas.jpg");
+}
+
+@media (max-width: 700px) {
+    body.inicio,
+    .faixa {
+        background-attachment: scroll;
+    }
+
+    .faixa {
+        height: 200px;
+    }
+
+    .faixa h2 {
+        font-size: 26px;
+    }
 }

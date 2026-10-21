@@ -1,7 +1,7 @@
 /* Fonte dos títulos */
 @import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&display=swap");
 
-/* ---------- Corpo da página ---------- */
+/* Corpo da página */
 body {
     background-color: #0a0e1a;
     /* brilho dourado suave no topo */
@@ -16,7 +16,7 @@ body {
     padding: 20px;
 }
 
-/* ---------- Títulos (todos centralizados) ---------- */
+/* Títulos */
 h2, h3, h4 {
     font-family: "Cinzel", Georgia, serif;
     color: #ffd700;
@@ -39,7 +39,7 @@ font {
     color: inherit;
 }
 
-/* ---------- Textos ---------- */
+/* Textos */
 p {
     text-align: center;
     max-width: 800px;
@@ -50,7 +50,7 @@ p {
     text-align: justify;
 }
 
-/* ---------- Links ---------- */
+/* Links */
 a {
     color: #ffd700;
     text-decoration: none;
@@ -65,7 +65,7 @@ a:hover {
     text-shadow: 0 0 10px #ffd700;
 }
 
-/* ---------- Menu ---------- */
+/* Menu */
 .menu {
     color: #5a6485;             
     font-size: 15px;
@@ -77,7 +77,7 @@ a:hover {
     padding: 0 10px;
 }
 
-/* ---------- Linhas divisórias ---------- */
+/* Linhas divisórias */
 hr {
     border: 0;
     height: 1px;
@@ -85,7 +85,7 @@ hr {
     margin: 20px 0;
 }
 
-/* ---------- Imagens ---------- */
+/* Imagens */
 img {
     max-width: 100%;
     height: auto;
@@ -122,7 +122,7 @@ a img[alt="Spotify"]:hover {
     opacity: 1;
 }
 
-/* ---------- Vídeo ---------- */
+/* Vídeo */
 iframe {
     display: block;
     max-width: 100%;
@@ -131,7 +131,7 @@ iframe {
     border-radius: 8px;
 }
 
-/* ---------- Tabelas  ---------- */
+/* Tabelas */
 table {
     border-collapse: collapse;
     margin: 20px auto;
@@ -167,7 +167,7 @@ td:first-child {
     font-weight: bold;
 }
 
-/* ---------- Formulário ---------- */
+/* Formulário */
 form td:first-child {
     text-align: right;           
 }
@@ -211,12 +211,12 @@ input[type="submit"]:hover {
     background-color: #ffffff;
 }
 
-/* ---------- Rodapé ---------- */
+/* Rodapé */
 small {
     color: #9aa3bf;
 }
 
-/* ---------- Celular ---------- */
+/* Celular */
 @media (max-width: 700px) {
     body {
         font-size: 16px;
@@ -294,5 +294,152 @@ body.inicio {
 
     .faixa h2 {
         font-size: 26px;
+    }
+}
+
+/* TRANSITION */
+
+a {
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+td {
+    transition: background-color 0.3s ease;
+}
+
+input, select, textarea {
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+/* TRANSFORM */
+
+p img[width] {
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+}
+
+p img[width]:hover {
+    transform: scale(1.05) rotate(-1deg);
+    box-shadow: 0 12px 35px rgba(255, 215, 0, 0.45);
+}
+
+/* Ícones das redes sociais: sobem e dão uma volta */
+a img[alt="Facebook"],
+a img[alt="Instagram"],
+a img[alt="Youtube"],
+a img[alt="Spotify"] {
+    transition: transform 0.5s ease, opacity 0.3s ease;
+}
+
+a img[alt="Facebook"]:hover,
+a img[alt="Instagram"]:hover,
+a img[alt="Youtube"]:hover,
+a img[alt="Spotify"]:hover {
+    transform: translateY(-5px) rotate(360deg) scale(1.2);
+}
+
+/* Links do menu: sobem um pouco ao passar o mouse */
+.menu a {
+    display: inline-block;
+    transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.menu a:hover {
+    transform: translateY(-3px) scale(1.1);
+}
+
+/* Botões do formulário */
+input[type="submit"],
+input[type="reset"] {
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+    transform: scale(1.1);
+}
+
+/* Título das faixas parallax */
+.faixa h2 {
+    transition: letter-spacing 0.6s ease, transform 0.6s ease;
+}
+
+.faixa:hover h2 {
+    letter-spacing: 8px;
+    transform: scale(1.05);
+}
+
+/* @KEYFRAMES + ANIMATION */
+
+/* Desvanecimento + deslocamento: o elemento aparece subindo */
+@keyframes surgir {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Flutuar: sobe e desce (usa o 50% como "meio do caminho") */
+@keyframes flutuar {
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+/* Pulsar: o brilho dourado da logo aumenta e diminui */
+@keyframes pulsar {
+    0%   { filter: drop-shadow(0 0 6px rgba(255, 215, 0, 0.3)); }
+    50%  { filter: drop-shadow(0 0 22px rgba(255, 215, 0, 0.9)); }
+    100% { filter: drop-shadow(0 0 6px rgba(255, 215, 0, 0.3)); }
+}
+
+/* Brilhar: o brilho dos títulos pulsa devagar */
+@keyframes brilhar {
+    0%   { text-shadow: 0 2px 10px #000, 0 0 8px rgba(255, 215, 0, 0.3); }
+    50%  { text-shadow: 0 2px 10px #000, 0 0 25px rgba(255, 215, 0, 0.9); }
+    100% { text-shadow: 0 2px 10px #000, 0 0 8px rgba(255, 215, 0, 0.3); }
+}
+
+/* Parágrafos e títulos aparecem subindo quando a página carrega */
+p, h3 {
+    animation: surgir 0.9s ease-out backwards;
+}
+
+/* Menu desce do topo */
+@keyframes descer {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h3.menu {
+    animation: descer 0.8s ease-out backwards;
+}
+
+/* Títulos: surgem e depois ficam com o brilho pulsando */
+h2 {
+    animation: surgir 1s ease-out backwards,
+               brilhar 3s ease-in-out 1s infinite;
+}
+
+/* Logo do cabeçalho: flutua e pulsa o brilho ao mesmo tempo */
+a img[alt^="Logomarca"] {
+    animation: flutuar 4s ease-in-out infinite,
+               pulsar 3s ease-in-out infinite;
+}
+
+/* Acessibilidade: respeita quem desativa animações no sistema */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
     }
 }
